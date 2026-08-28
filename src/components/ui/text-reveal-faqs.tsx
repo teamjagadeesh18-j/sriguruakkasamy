@@ -1,146 +1,123 @@
 "use client";
 
-import { TextEffect } from '@/components/core/text-effect';
-
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import Link from 'next/link'
-import { motion } from "framer-motion";
+import React from "react";
+import { TextEffect } from "@/components/core/text-effect";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Link from "next/link";
 
 export default function FAQs() {
   const faqItems = [
     {
-      id: 'item-1',
-      question: 'What is the educational philosophy at Sri Guru Akkasamy Velammal School?',
-      answer: 'We blend traditional ethical values and disciplined study routines with modern STEM learning and activity-based pedagogy to cultivate confident young leaders.',
+      id: "item-1",
+      question: "What curriculum and syllabus does the school follow?",
+      answer: "Our school follows the Tamil Nadu State Board Matriculation curriculum, combining core academic subjects with hands-on science experiments, digital learning modules, and value-based education.",
     },
     {
-      id: 'item-2',
-      question: 'Which grades are taught at Sri Guru Akkasamy Velammal School?',
-      answer: 'We offer classes from Nursery and KG through Primary, Middle, and Secondary levels with comprehensive Tamil Nadu State Board curriculum.',
+      id: "item-2",
+      question: "What age groups and classes are open for admission?",
+      answer: "Admissions are offered across Early Years (LKG & UKG), Primary Stage (Class 1-5), Middle School (Class 6-8), High School (Class 9-10), and Higher Secondary (Class 11-12).",
     },
     {
-      id: 'item-3',
-      question: 'What digital and science facilities are available?',
-      answer: 'Students benefit from modern computer labs, hands-on science experiment kits, interactive smart boards, and digital learning portals.',
+      id: "item-3",
+      question: "What safety and security measures are in place on campus?",
+      answer: "We ensure campus safety with 24/7 CCTV surveillance, gate security desk, female staff attendants for kindergarten/primary classes, and structured daily attendance tracking.",
     },
     {
-      id: 'item-4',
-      question: 'How does the school ensure moral and ethical growth?',
-      answer: 'Daily assemblies, value education classes, storytelling, and teacher mentorship programs instill respect, integrity, and social responsibility.',
+      id: "item-4",
+      question: "What co-curricular and sports activities are available?",
+      answer: "Students participate in annual sports day competitions, athletics, yoga, arts & crafts, science exhibitions, inter-school cultural events, and public speaking clubs.",
     },
     {
-      id: 'item-5',
-      question: 'When do admissions open for the new academic session?',
-      answer: 'Admissions are currently open for all classes. Parents can apply through our online portal or visit the school campus for personal consultation.',
+      id: "item-5",
+      question: "How can parents schedule a campus visit or interview?",
+      answer: "Parents are welcome to visit our admissions desk Monday through Saturday (8:30 AM – 4:00 PM) or complete our quick inquiry form in the connect section.",
     },
   ];
 
   return (
-    <section id="faqs" className="py-16 md:py-24 bg-[#ffffff] border-t border-[#d8dec9] font-body">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12 items-start">
-          <div className="lg:col-span-5">
-            <span className="inline-block px-3.5 py-1 rounded-[24px] bg-[#fef9c3] text-[#130e30] border border-[#d8dec9] text-xs font-semibold tracking-wide uppercase font-body mb-3">
-              HELP & ADMISSIONS
+    <section id="faqs" className="py-20 md:py-28 bg-[#f9fbf2] border-t border-[#130e30] font-body relative overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8">
+        <div className="grid gap-12 lg:grid-cols-12 items-start">
+          
+          <div className="lg:col-span-5 space-y-4">
+            <span 
+              className="inline-block px-3.5 py-1 rounded-2xl text-xs font-extrabold uppercase tracking-widest border shadow-xs"
+              style={{
+                backgroundColor: "rgba(255, 226, 40, 0.08)",
+                color: "#ffe228",
+                borderColor: "rgba(255, 226, 40, 0.2)"
+              }}
+            >
+              ADMISSIONS & HELP DESK
             </span>
-            <TextEffect as="h2" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.3} className="text-[#130e30] text-3xl md:text-4xl font-bold font-heading">Frequently Asked Questions</TextEffect>
-            <TextEffect as="p" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.3} className="text-[#5f5c6e] mt-4 text-balance text-base md:text-lg">
-              Everything you need to know about Sri Guru Akkasamy Velammal School.
+            <TextEffect 
+              as="h2" 
+              preset="fade-in-blur" 
+              speedReveal={1.1} 
+              speedSegment={0.3} 
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#130e30] font-heading tracking-tight leading-tight"
+            >
+              Frequently Asked Questions
             </TextEffect>
-            <TextEffect as="p" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.3} className="text-[#5f5c6e] mt-6 hidden md:block text-sm">
-              Can’t find what you’re looking for? Reach out to our{' '}
-              <Link
-                href="#connect"
-                className="text-[#d97706] font-semibold hover:underline"
-              >
-                admissions support team
-              </Link>{' '}
-              for guidance.
+            <TextEffect 
+              as="p" 
+              preset="fade-in-blur" 
+              speedReveal={1.1} 
+              speedSegment={0.3} 
+              className="text-slate-600 text-base md:text-lg leading-relaxed font-body"
+            >
+              Everything you need to know about our admissions process, academic structure, and campus guidelines.
             </TextEffect>
+
+            <div 
+              className="p-5 rounded-2xl border bg-white shadow-xs mt-6 space-y-2"
+              style={{ borderColor: "#130e30" }}
+            >
+              <h4 className="font-extrabold text-sm text-[#130e30] font-heading">Need Direct Guidance?</h4>
+              <p className="text-xs text-slate-600 font-body">
+                Can't find your answer here? Reach out directly to our{" "}
+                <Link
+                  href="#connect"
+                  className="font-bold underline hover:no-underline transition-all"
+                  style={{ color: "#ffe228" }}
+                >
+                  admissions desk
+                </Link>{" "}
+                for personalized assistance.
+              </p>
+            </div>
           </div>
 
           <div className="lg:col-span-7">
-            <Accordion
-              type="single"
-              collapsible>
-              {faqItems.map((item) => (
-                <AccordionItem
-                  key={item.id}
-                  value={item.id}
-                  className="border-b border-[#d8dec9]">
-                  <AccordionTrigger className="cursor-pointer text-left text-base font-semibold text-[#130e30] hover:text-[#d97706] hover:no-underline font-heading">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#5f5c6e]">
-                    <BlurredStagger text={item.answer} />
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div 
+              className="p-6 md:p-8 rounded-2xl bg-white border border-[#130e30]"
+              style={{
+                boxShadow: "0 10px 30px -10px rgba(0,0,0,0.05)"
+              }}
+            >
+              <Accordion type="single" collapsible className="space-y-3">
+                {faqItems.map((item) => (
+                  <AccordionItem
+                    key={item.id}
+                    value={item.id}
+                    className="border border-slate-200/80 rounded-2xl px-5 py-1 bg-slate-50/50 data-[state=open]:bg-white data-[state=open]:shadow-xs transition-all duration-200"
+                  >
+                    <AccordionTrigger 
+                      className="cursor-pointer text-left text-sm md:text-base font-extrabold text-[#130e30] hover:no-underline font-heading py-4"
+                    >
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-slate-600 text-xs md:text-sm leading-relaxed font-body pb-4 pt-1">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
 
-          <TextEffect as="p" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.3} className="text-[#5f5c6e] mt-6 md:hidden text-sm">
-            Can't find what you're looking for? Contact our{' '}
-            <Link
-              href="#connect"
-              className="text-[#d97706] font-semibold hover:underline">
-              admissions team
-            </Link>
-          </TextEffect>
         </div>
       </div>
     </section>
-  )
-}
-
-export const BlurredStagger = ({
-  text,
-}: {
-  text: string;
-}) => {
-  const headingText = text;
- 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.012,
-      },
-    },
-  };
- 
-  const letterAnimation = {
-    hidden: {
-      opacity: 0,
-      filter: "blur(8px)",
-    },
-    show: {
-      opacity: 1,
-      filter: "blur(0px)",
-    },
-  };
- 
-  return (
-    <div className="w-full pt-1">
-      <TextEffect as="p" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.3}
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="text-sm md:text-base text-[#5f5c6e] leading-relaxed break-words whitespace-normal font-body"
-      >
-        {headingText.split("").map((char, index) => (
-          <motion.span
-            key={index}
-            variants={letterAnimation}
-            transition={{ duration: 0.25 }}
-            className="inline-block"
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
-        ))}
-      </TextEffect>
-    </div>
   );
-};
+}
